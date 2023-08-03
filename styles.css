@@ -1,31 +1,38 @@
+*{
+    box-sizing: border-box;
+}
+
 html{
     background-color: #322653;
-    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    color: white;
     font-family: Arial, sans-serif;
 }
 
+
 .add-bookmark{
+    margin: 0;
     width: 25vw;
+    height: 10vh;
     margin: auto;
     display: flex;
     flex-direction: row;
     justify-content: center;
+    align-items: center;
+    color: white;
     background-color: rgb(128, 98, 214);
     border-radius: 15px;
     opacity: 90%;
-    /* transition: transform 1s; */
+    transition: transform 1s;
     transition: filter 3s;
-
-}
+} 
 
 .add-bookmark:hover{
     cursor: pointer;
-    /* transform: scaleX(1.05); */
+    filter: brightness(110%);
+    transform: scaleX(1.05);
     background-color: rgba(128, 98, 214, 0.9);
-}
+} 
 
 .bookmarks {
     margin-top: 4rem;
@@ -37,14 +44,14 @@ html{
 }
 
 .item{
-    max-width: 20%;
-    max-height:3vw;
+    width: 20%;
+    height:7vh;
     /* display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center; */
     margin: 20px;
-    padding: 20px;
+    padding: 10px;
     background-color: rgba(128, 98, 214);
     border-radius: 10px;
     transition: transform 1s ease;
@@ -69,19 +76,20 @@ html{
     cursor: pointer;
     z-index: 2;
     vertical-align: super;
+    position: relative;
+    float: right;
     color: white;
     
 }
 
 .modal-container{
-    background-color: rgba(0, 0, 0, 0.6);
-    position: fixed;
     display: none;
+    position: fixed;
     top: 0;
-    bottom: 0;
     right: 0;
     left: 0;
-    color: black;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.6);
 }
 
 .show-modal{
@@ -91,87 +99,110 @@ html{
 }
 
 .modal{
+    width: 25vw;
+    height: 60vh;
     background: white;
-    max-width: 95%;
-    width: 500px;
     animation: modalopen 1s;
     border-radius: 10px;
-    
+
 }
 
-@keyframes modalopen {
+
+@keyframes modalopen{
     from{
-        opacity:0;
+        opacity: 0;
     }
 
     to{
-        opacity: 1 ;
+        opacity: 1;
     }
 }
 
-.modal .close-icon{
-    float: right;
-    position: relative;
-    font-size: 20px;
-    color: white;
-    top: 13px;
-    right: 13px;
-    cursor: pointer;
-}
-
 .modal-header{
+    height: 20%;
     background: rgba(128, 98, 214);
-    color: white;
-    padding: 15px;
+    color:white;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
     border-radius: 10px 10px 0px 0px;
+    padding: 15px;
+
 }
 
 h3{
     margin: 0;
+    padding: 10px;
+}
+
+#close-modal{
+    color: white;
+    font-size: 25px;
+    padding: 10px;
+    cursor: pointer;
 }
 
 .modal-content{
-    padding: 20px;
-    background-color: whitesmoke;
+    background: whitesmoke;
+    height: 80%;
     border-radius: 0px 0px 10px 10px;
+   
+}
+
+.modal-form{
+    height: 100%;
+    /* padding: 15px; */
 }
 
 .form-group{
-    height: 55px;
-}
-
-.form-input{
-    width: 97%;
-    padding: 5px;
-    border: 1px solid rgba(128, 98, 214);
-    border-radius: 10px;
-    display: block;
-    outline: none;
+    height: 42.5%;
+    padding: 15px;
+    /* border: 1px solid red; */
+   
 }
 
 .form-label{
-    color: rgb(128, 98, 214);
     display: block;
+    width: 95%;
+    text-align: center;
+    margin: 10px;
+    color: rgb(128, 98, 214);
+}
+
+.form-input{
+    display: block;
+    width:95%;
+    border: none;
+    outline: 0.5px solid rgba(128, 98, 214);
+    border-radius: 10px;
+    height: 25%;
+}
+
+
+.button-div{
+    /* border: 1px solid blue; */
+    height: 15%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    /* width: 35%; */
 }
 
 button{
-    cursor: pointer;
-    color: white;
-    background: rgb(128, 98, 214);
-    height: 30px;
-    width: 100px;
+    height: 70%;
+    width:25%;
     border: none;
-    border-radius: 10px;
-    margin-top: 10px;
+    border-radius: 5px;
+    background: rgba(128, 98, 214);
+    color: white;
+    cursor: pointer;
 }
 
 button:hover{
     filter: brightness(110%);
 }
 
-button:focus{
-    outline: none;
-}
 @media screen and (max-width:720px){
    
     .add-bookmark{
@@ -187,6 +218,10 @@ button:focus{
         
     }
 
+    .item{
+        width:40%;
+    }
+
     .fa-xmark{
         margin-left: 10px;
         cursor: pointer;
@@ -194,5 +229,12 @@ button:focus{
         vertical-align: super;
         
         
+    }
+}
+
+
+@media screen and (max-width:1000px){
+    .modal{
+        width:50vw;
     }
 }
