@@ -46,15 +46,15 @@ html{
 .item{
     width: 20%;
     height:7vh;
-    /* display: flex;
+    display: flex;
     flex-direction: row;
+    justify-content: space-around;
     align-items: center;
-    justify-content: center; */
     margin: 20px;
     padding: 10px;
     background-color: rgba(128, 98, 214);
     border-radius: 10px;
-    transition: transform 1s ease;
+    
 }
 
 .item a {
@@ -67,15 +67,14 @@ html{
     cursor: pointer;
     text-decoration: underline;
     text-decoration-color: white;
-    /* transform: scale(105%); */
     background-color: rgba(128, 98, 214, 0.9);
 }
 
 .fa-xmark{
-    margin-left: 70px;
+    /* margin-left: 70px; */
     cursor: pointer;
     z-index: 2;
-    vertical-align: super;
+    /* vertical-align: super; */
     position: relative;
     float: right;
     color: white;

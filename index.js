@@ -7,7 +7,7 @@ const websiteurlEl = document.getElementById('website-url');
 const bookmarksContainer = document.getElementById('bookmarks-container');
 const modalContainer = document.getElementById('modal-container');
 
-const bookmarks = [];
+let bookmarks = [];
 
 function show(){
     modal.classList.add('show-modal');
@@ -39,6 +39,8 @@ function validate(nameValue, urlValue){
 }
 
 function buildBookmarks(){
+
+    bookmarksContainer.textContent = '';
     bookmarks.forEach((bookmark) =>{
         const {name , url} = bookmark;
 
@@ -46,9 +48,9 @@ function buildBookmarks(){
         item.classList.add('item');
 
         const closeIcon = document.createElement('i');
-        closeIcon.classList.add('fa-mark');
-        closeIcon.setAttribute('title', 'Dlose Bookmark');
-        closeIcon.setAttribute('onclick', `deleteBookmark(${url})`)
+        closeIcon.classList.add('fa-solid', 'fa-xmark');
+        closeIcon.setAttribute('title', 'Close Bookmark');
+        closeIcon.setAttribute('onclick', `deleteBookmark('${url}')`)
 
         const info = document.createElement('div');
 
@@ -66,7 +68,7 @@ function buildBookmarks(){
 function fetchBookmarks(){
     // get the data from local storage and parse it to an array of objects
     if(localStorage.getItem('Bookmarks')){
-        bookmarks = JSON.parse(localStorage.getItem("Bookmarks"));
+        bookmarks = JSON.parse(localStorage.getItem('Bookmarks'));
     }
 
     else {
@@ -81,6 +83,16 @@ function fetchBookmarks(){
     buildBookmarks();
 }
 
+function deleteBookmark(url){
+    bookmarks.forEach((bookmark) => {
+        if (bookmark.url === url) {
+            bookmarks.splice(bookmarks.indexOf(bookmark), 1 );
+        }
+    });
+
+    localStorage.setItem('Bookmarks', JSON.stringify(bookmarks));
+    fetchBookmarks();
+}
 
 function storeBookmark(e){
     e.preventDefault();
