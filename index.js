@@ -25,6 +25,7 @@ function validate(nameValue, urlValue){
     const expression = /https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0-9()@:%_\+.~#?&//=]*)/g;
 
     const regex = new RegExp(expression);
+
     if(!nameValue || !urlValue){
         alert('please fill both fields');
     }
@@ -94,6 +95,7 @@ function deleteBookmark(url){
     fetchBookmarks();
 }
 
+
 function storeBookmark(e){
     e.preventDefault();
     const nameValue=websitenameEl.value;
@@ -120,4 +122,6 @@ function storeBookmark(e){
 
 bookmarkForm.addEventListener('submit', storeBookmark);
 
+
+// fetch bookmarks if any exists in local storage
 fetchBookmarks();

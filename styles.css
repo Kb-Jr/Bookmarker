@@ -71,10 +71,8 @@ html{
 }
 
 .fa-xmark{
-    /* margin-left: 70px; */
     cursor: pointer;
     z-index: 2;
-    /* vertical-align: super; */
     position: relative;
     float: right;
     color: white;
@@ -151,13 +149,12 @@ h3{
 
 .modal-form{
     height: 100%;
-    /* padding: 15px; */
+
 }
 
 .form-group{
     height: 42.5%;
     padding: 15px;
-    /* border: 1px solid red; */
    
 }
 
@@ -180,12 +177,11 @@ h3{
 
 
 .button-div{
-    /* border: 1px solid blue; */
     height: 15%;
     display: flex;
     justify-content: center;
     align-items: flex-start;
-    /* width: 35%; */
+ 
 }
 
 button{
