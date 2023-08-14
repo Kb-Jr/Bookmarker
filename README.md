@@ -22,6 +22,9 @@ The basic approach for this project is to have a user input details in input fie
 # Tech used
 I used HTML, CSS and Javascript for this project
 
+# Live Link
+- [Bookmarker](https://kb-jr.github.io/Bookmarker/)
+
 # Acknoledgement
 ## Tutor
 - Jacinto Wong
